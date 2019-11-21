@@ -4,15 +4,17 @@ import { ConnectedRouter } from 'connected-react-router';
 import { Provider } from 'react-redux';
 import Main from './Main';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import { indigo, pink } from '@material-ui/core/colors';
+import { blueGrey, green } from '@material-ui/core/colors';
+import { IntlProvider } from 'react-intl';
 
 const theme = createMuiTheme({
   palette: {
-    primary: indigo,
-    secondary: pink,
+    primary: {
+      main: blueGrey[800]
+    },
+    secondary: green,
   },
   status: {
-    danger: 'orange',
   },
 });
 
@@ -22,11 +24,13 @@ export default class Root extends React.Component {
     const { store, history } = this.props;
     return (
       <Provider store={store}>
-        <ThemeProvider theme={theme}>
-          <ConnectedRouter history={history}>
-            <Main />
-          </ConnectedRouter>
-        </ThemeProvider>
+        <IntlProvider locale={"pt-BR"}>
+          <ThemeProvider theme={theme}>
+            <ConnectedRouter history={history}>
+              <Main />
+            </ConnectedRouter>
+          </ThemeProvider>
+        </IntlProvider>
       </Provider>
     );
   }
