@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import HeaderMenu from '../menu/HeaderMenu';
 import NavigationDrawer from '../menu/NavigationDrawer';
 import DashboardContext from './DashboardContext';
-import { Container, Grid } from '@material-ui/core';
 
 const DashboardLayout = ({ children }) => {
   const [settings, setSettings] = useState({ drawerOpen: false });
@@ -12,15 +11,11 @@ const DashboardLayout = ({ children }) => {
     <DashboardContext.Provider value={{ settings, setSettings }}>
       <HeaderMenu />
       {/* <SideMenu /> */}
-      {/* <NavigationDrawer /> */}
+      <NavigationDrawer />
 
-      <Container style={{padding: 0, paddingTop: 50}}>
-        <Grid container justify="center">
-          <Grid item xs={12} md={5}>
-            {children}
-          </Grid>
-        </Grid>
-      </Container>
+      <div>
+        {children}
+      </div>
 
       {/* <Footer /> */}
     </DashboardContext.Provider>

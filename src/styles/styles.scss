@@ -1,38 +1,3 @@
 body {
-  margin: 0;
-  font-family: 'Roboto';
-}
-
-.sectionTitle {
-  margin: 0;
-  padding: 20px;
-  background-color: #fbfbfb;
-  color: #505050;
-  font-weight: 600;
-  font-size: 14px;
-  text-transform: uppercase;
-}
-
-.menuLink {
-  padding-left: 0;
-  margin-left: 0;
-  list-style-type: none;
-  padding-top: 0;
-  margin-top: 0;
-
-  li {
-    a {
-        padding: 10px 5px;
-        width: 100%;
-        display: block;
-        box-sizing: border-box;
-        border-bottom: 1px solid #e3e3e3;
-        border-top: 1px solid #e3e3e3;
-        color: #656565;
-        font-weight: bold;
-        text-decoration: none;
-
-        
-    }
-  }
+  margin: 0
 }
